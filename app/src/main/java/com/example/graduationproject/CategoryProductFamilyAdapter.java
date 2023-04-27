@@ -7,17 +7,19 @@ import android.view.ViewGroup;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
+
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.graduationproject.model.ProductiveFamily;
 
+import org.checkerframework.checker.nullness.qual.NonNull;
+
 import java.util.ArrayList;
 
-public class CategoryProductFamilyAdapter extends RecyclerView.Adapter<CategoryProductFamilyVH>{
+public class CategoryProductFamilyAdapter extends RecyclerView.Adapter<CategoryProductFamilyVH> {
     Context context;
     ListenerOnClickItem onClickItem;
-    ArrayList<ProductiveFamily> productiveFamilyArrayList=new ArrayList<>();
+    ArrayList<ProductiveFamily> productiveFamilyArrayList = new ArrayList<>();
 
     public CategoryProductFamilyAdapter(Context context, ListenerOnClickItem onClickItem, ArrayList<ProductiveFamily> productiveFamilyArrayList) {
         this.context = context;
@@ -28,8 +30,8 @@ public class CategoryProductFamilyAdapter extends RecyclerView.Adapter<CategoryP
     @NonNull
     @Override
     public CategoryProductFamilyVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-      View view=  LayoutInflater.from(parent.getContext()).inflate(R.layout.productivefamilyitem,null);
-        return new  CategoryProductFamilyVH(view);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.productivefamilyitem, null);
+        return new CategoryProductFamilyVH(view);
     }
 
     @Override
@@ -53,17 +55,19 @@ public class CategoryProductFamilyAdapter extends RecyclerView.Adapter<CategoryP
         return productiveFamilyArrayList.size();
     }
 }
- class CategoryProductFamilyVH extends RecyclerView.ViewHolder {
+
+class CategoryProductFamilyVH extends RecyclerView.ViewHolder {
     TextView name;
     TextView details;
     TextView location;
     RatingBar ratingBar;
+
     public CategoryProductFamilyVH(@NonNull View view) {
 
         super(view);
-        name=view.findViewById(R.id.tv_descroption);
-        details =view.findViewById(R.id.tv_details);
-        location=view.findViewById(R.id.tv_location);
-        ratingBar=view.findViewById(R.id.ratingBar);
+        name = view.findViewById(R.id.tv_descroption);
+        details = view.findViewById(R.id.tv_details);
+        location = view.findViewById(R.id.tv_location);
+        ratingBar = view.findViewById(R.id.ratingBar);
     }
 }

@@ -30,7 +30,7 @@ FirebaseAuth firebaseAuth;
         FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
 
         if (user!=null){
-            startActivity(new Intent(getApplicationContext(), ProductiveFamilyProfile.class));
+            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
 
         }
         binding.btnRegister.setOnClickListener(new View.OnClickListener() {

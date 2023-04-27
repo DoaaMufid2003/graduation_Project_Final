@@ -7,7 +7,7 @@ public class Product {
     String category;
     String image;
     String user;
-String id;
+    String id;
 
     public String getId() {
         return id;

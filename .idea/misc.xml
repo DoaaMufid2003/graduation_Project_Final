@@ -6,13 +6,16 @@
         <entry key="app/src/main/res/layout/activity_add_products.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/activity_category_productive_family.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/activity_details_productive_family.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/activity_productive_family_profile.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/activity_update_information_productive_family.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_update_products.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/activity_view_information_protective_family.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/activity_view_product.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/fragment_information_prodective_family.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/fragment_item_productive_family.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/layout/item_category_graduation.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/itemproduct.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/productivefamilyitem.xml" value="0.28229166666666666" />
       </map>

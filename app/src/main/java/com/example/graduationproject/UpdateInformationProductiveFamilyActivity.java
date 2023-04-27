@@ -23,6 +23,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+
 import androidx.activity.result.contract.ActivityResultContracts;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
@@ -31,7 +32,7 @@ public class UpdateInformationProductiveFamilyActivity extends AppCompatActivity
     ActivityUpdateInformationProductiveFamilyBinding binding;
     FirebaseAuth firebaseAuth;
     private Uri imageuri;
-     FirebaseFirestore firebaseFirestore ;
+    FirebaseFirestore firebaseFirestore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +55,8 @@ public class UpdateInformationProductiveFamilyActivity extends AppCompatActivity
                     }
                 }
         );
-        firebaseFirestore =FirebaseFirestore.getInstance();
+        firebaseFirestore = FirebaseFirestore.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
 
         firebaseFirestore.collection("Productive family").document(firebaseAuth.getCurrentUser().getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -63,15 +65,15 @@ public class UpdateInformationProductiveFamilyActivity extends AppCompatActivity
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
                         Log.d("TAG 1", "DocumentSnapshot data: " + document.getData());
-                        Log.d("name document", document.getString("name")+"category "+document.getString("category"));
+                        Log.d("name document", document.getString("name") + "category " + document.getString("category"));
 //                        binding.imageView2.setImageURI(Uri.parse(document.getString("image")));
                         Glide.with(getApplicationContext()).load(Uri.parse(document.getString("image"))).circleCrop().into(binding.uplodeimgupdate);
-                        Log.d("image",document.getString("image"));
+                        Log.d("image", document.getString("image"));
 //                        Glide.with(getApplicationContext()).load(Uri.parse(document.getString("image")).into(binding.imageView2);
                         binding.etName.setText(document.getString("name"));
                         binding.etCategryupdate.setText(document.getString("category"));
                         binding.etDescriptionupdate.setText(document.getString("details"));
-                        binding.etPhoneupdate.setText(""+document.getLong("phone").intValue());
+                        binding.etPhoneupdate.setText("" + document.getLong("phone").intValue());
 //                        double phone=document.getDouble("phone");
 //                        int phone
 //                        binding.tvPhone.setText((Integer));
@@ -83,19 +85,18 @@ public class UpdateInformationProductiveFamilyActivity extends AppCompatActivity
                 }
 
 
-
             }
 
         });
         binding.updatebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String name=binding.etName.getText().toString();
-                int phone= Integer.parseInt(binding.etPhoneupdate.getText().toString());
-                String category=binding.etName.getText().toString();
-                String descrption=binding.etDescriptionupdate.getText().toString();
-                String image= String.valueOf(imageuri);
-                ProductiveFamily productiveFamily=new ProductiveFamily();
+                String name = binding.etName.getText().toString();
+                int phone = Integer.parseInt(binding.etPhoneupdate.getText().toString());
+                String category = binding.etName.getText().toString();
+                String descrption = binding.etDescriptionupdate.getText().toString();
+                String image = String.valueOf(imageuri);
+                ProductiveFamily productiveFamily = new ProductiveFamily();
                 productiveFamily.setName(name);
                 productiveFamily.setPhone(phone);
                 productiveFamily.setDetails(descrption);
