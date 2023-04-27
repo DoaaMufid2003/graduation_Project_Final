@@ -2,19 +2,12 @@ package com.example.graduationproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.GridView;
-import android.widget.Toast;
 
 import com.example.graduationproject.databinding.ActivityHomeBinding;
 import com.example.graduationproject.model.Category;
-import com.example.graduationproject.model.Product;
-import com.example.graduationproject.model.ProductiveFamily;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -45,7 +38,7 @@ public class HomeActivity extends AppCompatActivity {
 
                     categories = (ArrayList<Category>) task.getResult().toObjects(Category.class);
 
-                    AdapterCategoryGraduation adapterCategoryGraduation = new AdapterCategoryGraduation(categories, getBaseContext(), new Listener() {
+                    CategoryAdapter adapterCategoryGraduation = new CategoryAdapter(categories, getBaseContext(), new Listener() {
                         @Override
                         public void onClick(String categoryName) {
 

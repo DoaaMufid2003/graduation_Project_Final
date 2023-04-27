@@ -18,7 +18,7 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 
 import java.util.List;
 
-class AdapterCategoryGraduation extends RecyclerView.Adapter<AdapterCategoryGraduation.MyViewHolder> {
+class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyViewHolder> {
    List<Category> categories;
    Context context;
    Listener listener;
@@ -27,7 +27,7 @@ class AdapterCategoryGraduation extends RecyclerView.Adapter<AdapterCategoryGrad
 
 
 
-   public AdapterCategoryGraduation(List<Category> categories, Context context,Listener listener) {
+   public CategoryAdapter(List<Category> categories, Context context, Listener listener) {
        this.categories = categories;
        this.context = context;
        this.listener=listener;
