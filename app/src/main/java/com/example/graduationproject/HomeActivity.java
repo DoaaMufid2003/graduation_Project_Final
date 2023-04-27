@@ -59,6 +59,9 @@ public class HomeActivity extends AppCompatActivity {
 
 
                 }
+                else{
+                    binding.progressBar2.setVisibility(View.VISIBLE);
+                }
 
             }
         });
